@@ -1,6 +1,7 @@
 # Backend
 ### Installing 
 ```
+cd backend
 npm install
 ```
 
