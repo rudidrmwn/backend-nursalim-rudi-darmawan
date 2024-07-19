@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
-import {jwtDecode as jwt_decode} from 'jwt-decode';
+import { jwtDecode } from "jwt-decode";
 import { useHistory } from 'react-router-dom';
  
 const Dashboard = () => {
@@ -19,7 +19,8 @@ const Dashboard = () => {
         try {
             const response = await axios.get('http://localhost:5000/token');
             setToken(response.data.accessToken);
-            const decoded = jwtDecode(response.data.accessToken);
+            const decoded = jwtDecode
+(response.data.accessToken);
             setName(decoded.name);
             setExpire(decoded.exp);
         } catch (error) {
@@ -37,7 +38,8 @@ const Dashboard = () => {
             const response = await axios.get('http://localhost:5000/token');
             config.headers.Authorization = `Bearer ${response.data.accessToken}`;
             setToken(response.data.accessToken);
-            const decoded = jwtDecode(response.data.accessToken);
+            const decoded = jwtDecode
+(response.data.accessToken);
             setName(decoded.name);
             setExpire(decoded.exp);
         }
